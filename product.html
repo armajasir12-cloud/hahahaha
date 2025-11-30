@@ -1,0 +1,225 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jamu Anti Miskin
+        </title>
+        <link rel="stylesheet" href="Project Jamu.css" />
+
+        <link rel="icon" href="JAMU 1.png"/>
+         </head>
+
+        <body>
+
+            <nav>
+
+                <div class="nav-kiri">
+                    <a href="ini kodingan.html">
+                        <img class="icon-kiri" src="logooooo.png" alt="logooo">
+                    </a>
+                </div>
+
+                <ul class="nav-tengah">
+
+                    <li class="item-geser">
+                        <a href="#">About us</a>
+                        
+                        <div class="dropdown">
+                            <div class="isinya-dropdown">
+                                
+                                
+                                <div class="kolom">
+                                    <h3>Impact</h3>
+                                    <a href="#">Arma's Foundation</a>
+                                    <a href="#">Fair & Trade</a>
+                                    <a href="#">Upgrading skill</a>
+                                    <a href="#">sedekah yuk</a>
+                                </div>
+
+                                <div class="kolom">
+                                    <h3> About</h3>
+                                    <a href="#"> Our Purpose</a>
+                                    <a href="#"> Pure Herba Jamu</a>
+                                    <a href="#"> Blog</a>
+
+                                </div>
+
+                                <div class="kolom">
+                                    <h3>Social Media</h3>
+                                    <a href="#">Instagram</a>
+                                    <a href="#">Whastsaap</a>
+                                    <a href="#">Shopeee</a>
+                                        
+                                </div>
+
+                            <div class="isi-fotonya">
+                                <h3> Meet Our founders</h3>
+                                <img class="dropdown-foto" src="armaaaa founder.jpg" alt="Foto Founder">
+                            </div>
+                        
+                            </div>
+                        </div>
+                        </li>
+
+                    <li class="item-geser">
+    <a href="#">Price</a>
+
+    <div class="dropdown">
+        <div class="isinya-dropdown">
+            
+            <div class="Price-list">
+
+                <a href="#" class="item-produk">
+                    <img src="model jamu godogori.png" alt="Original">
+                    <span>Godog Original</span>
+                    <span class="harga">Rp 15.000</span>
+                </a>
+
+                <a href="#" class="item-produk">
+                    <span class="badge-best">BEST SELLER!!!</span>
+                    <img src="beraskncur.png" alt="Beras Kencur">
+                    <span>Beras Kencur</span>
+                    <span class="harga">Rp 15.000</span>
+                </a>
+
+                <a href="#" class="item-produk">
+                    <img src="kunyittt-removebg-preview.png" alt="Kunyit Asem">
+                    <span>Kunyit Asem</span>
+                    <span class="harga">Rp 15.000</span>
+                 </a>
+
+                 </div> </div>
+                  </div>
+                 </li>
+                    
+                    <li><a href="#">Stock</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Sponsorship</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Support</a></li>
+                    
+
+
+                </ul>
+
+                <div class="nav-kanan">
+                     <a href="#">
+                        <img class="icon-kecil" src="Search.png" alt="Search">
+                        </a> 
+                    
+                        <a href="#">
+                            <img class="icon-kecil" src="bag.png" alt="bag">
+                        </a> </div>
+            </nav>
+
+            <main>
+    <section class="hero-section">
+        <div class="sticky-content">
+            <div class="text-container">
+                <h2 class="judul-kecil">Jamu Pahit</h2>
+                <h1 class="text-besar">
+                    THE NEW ERA OF<br>
+                    ENERGY AND FOCUS.
+                </h1>
+            </div>
+
+            <div class="image-wrapper">
+                <div class="glow-behind"></div>
+                <img src="JAMUKU.png" alt="Godog Booster" class="produk-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2 class="section-title">The most-trusted<br> energy platform.</h2>
+    <div class="stats-container">
+        
+        <div class="stat-item">
+            <h2 class="stat-number">100%</h2>
+            <p class="stat-desc">Natural ingredients used.</p>
+        </div>
+
+        <div class="stat-item">
+            <h2 class="stat-number">36 hours</h2>
+            <p class="stat-desc">Energy boost that lasts all weekend.</p>
+        </div>
+
+        <div class="stat-item">
+            <h2 class="stat-number">100M+</h2>
+            <p class="stat-desc">sold out</p>
+        </div>
+
+    </div>
+</section>
+</main>
+<button class="buy-button">Buy</button>
+<script>
+    const heroSection = document.querySelector('.hero-section');
+    const produkImage = document.querySelector('.produk-image');
+    const glowBehind = document.querySelector('.glow-behind');
+    const buyButton = document.querySelector('.buy-button');
+    const judulKecil = document.querySelector('.judul-kecil');
+    const textBesar = document.querySelector('.text-besar');
+
+    let ticking = false;
+
+    function updateScrollAnimation() {
+        const scrolled = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+        
+        const progress = Math.min(Math.max(scrolled / (heroHeight * 0.7), 0), 1);
+
+        // Text fade out (0-40%)
+        if (progress < 0.4) {
+            const textOpacity = 1 - (progress / 0.4);
+            judulKecil.style.opacity = textOpacity;
+            textBesar.style.opacity = textOpacity;
+        } else {
+            judulKecil.style.opacity = 0;
+            textBesar.style.opacity = 0;
+        }
+
+        // Gambar zoom in
+        const scale = 0.4 + (progress * 0.55);
+        const translateY = 40 - (progress * 45);
+        const opacity = 0.3 + (progress * 0.7);
+        const blur = 10 - (progress * 10);
+        const shadowIntensity = 0.2 + (progress * 0.6);
+        const shadowSize = 20 + (progress * 40);
+
+        produkImage.style.transform = `translateY(${translateY}%) scale(${scale})`;
+        produkImage.style.opacity = opacity;
+        produkImage.style.filter =`blur(${blur}px)`;
+
+        glowBehind.style.opacity = progress * 0.8;
+
+        // Button muncul di akhir
+        if (progress > 0.7) {
+            buyButton.classList.add('show');
+        } else {
+            buyButton.classList.remove('show');
+        }
+
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateScrollAnimation);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+    updateScrollAnimation();
+
+    buyButton.addEventListener('click', () => {
+        alert('Coming soon! 🚀');
+    });
+</script>
+
+    
+        </body>
+</html>
